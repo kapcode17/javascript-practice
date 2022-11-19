@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+  position: relative;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: lightblue;
+  padding: 1rem;
+}
+
+nav .nav-actions {
+  display: flex;
+  column-gap: 1rem;
+  align-items: center;
+}
+
+nav .search {
+  background-color: white;
+  border-radius: 15px;
+  height: min-content;
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+}
+
+nav input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+nav .search > button {
+  border: none;
+  background-color: transparent;
+}
+
+nav .fav-btn {
+  border: none;
+  background-color: white;
+  border-radius: 20px;
+  font-size: 1.25rem;
+  display: flex;
+  gap: 0.25rem;
+  align-items: center;
+  height: min-content;
+  padding: 0.25rem 0.75rem;
+}
+nav .fav-btn i {
+  display: flex;
+  color: red;
+  font-size: 1rem;
+}
+
+.meal-list {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.notice {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.meal {
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.meal .meal-body {
+  padding: 0.25rem 0.5rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.meal .meal-body h4 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.meal .meal-body .fav-btn {
+  background-color: transparent;
+  border: none;
+}
+.meal .meal-body .fav-btn i {
+  color: red;
+}
+
+.info-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 1rem;
+  max-height: 70%;
+  overflow-y: scroll;
+}
+
+.info-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+}
+
+.info-modal-close i {
+  font-size: 2rem;
+  display: flex;
+}
+
+.info-modal-img,
+.info-modal-name,
+.info-modal-desc,
+.info-modal-ings-label {
+  margin-bottom: 0.25rem;
+}
+
+.info-modal-ings {
+  padding-left: 1rem;
+}
+
+
+@media screen and (max-width: 768px) {
+  .meal-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 576px) {
+  nav .search input{
+    max-width: 100px;
+  }
+  .meal-list {
+    grid-template-columns: 1fr;
+  }
+}

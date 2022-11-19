@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #202124;
+}
+
+.calculator-grid {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+  grid-template-columns: repeat(4, 55px);
+  grid-template-rows: minmax(80px, auto) repeat(5, 55px);
+  gap: 0.25rem;
+}
+
+.calculator-grid > button {
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.5);
+  color: white;
+}
+
+.calculator-grid > [data-number] {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+.calculator-grid > [data-equals] {
+  background-color: #8ab4f8;
+  color: #202124;
+}
+
+.calculator-grid > button:hover {
+  background-color: rgba(255,255,255,0.55);
+}
+
+.calculator-grid > [data-number]:hover {
+  background-color: rgba(255,255,255,0.35);
+}
+
+.calculator-grid > [data-equals]:hover {
+  background-color: #AECBFA;
+}
+
+.span-two {
+  grid-column: span 2;
+}
+
+.output {
+  grid-column: 1 / -1;
+  background-color: transparent;
+  border: 1px solid #B2B2B2;
+  border-radius: 5px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 10px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
+}

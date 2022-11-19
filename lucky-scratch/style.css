@@ -1,0 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+body {
+  background-image: url(images/bg.jpg);
+  background-size: cover;
+}
+
+input[type=submit], button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1024px;
+  margin: auto;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.paper {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  grid-template-rows: repeat(4, 80px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  gap: 1rem;
+  padding: 2rem;
+  background-image: url(images/paper.jpg);
+  background-size: cover;
+  background-position: center;
+  box-shadow: 1rem 1rem 10px rgba(0,0,0,0.5);
+}
+
+.slot {
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.slot-hidden::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #1F1D12;
+}
+
+.slot .skull {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+  height: 75%;
+}
+
+.result-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 250px;
+  min-height: 200px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.result-modal input {
+  padding: 0.5rem 1rem;
+  background-color: #FF731D;
+  border: none;
+  border-radius: 20px;
+  color: #1F1D12;
+  font-size: 1.25rem;
+}

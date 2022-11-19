@@ -1,0 +1,121 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(../images/bg.png);
+  background-size: cover;
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  min-width: 768px;
+  max-width: 1024px;
+  margin: auto;
+  position: relative;
+}
+
+h1 {
+  color: lightblue;
+  text-align: center;
+}
+
+.inventory {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 58px;
+  gap: 0.2rem;
+  max-height: 100vh;
+  overflow: scroll;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.inventory::-webkit-scrollbar {
+  display: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .inventory {
+    width: 70px;
+  }
+}
+
+.inventory-slot {
+  width: 100%;
+  aspect-ratio: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-size: contain;
+  background-image: url(../images/slot-gray.png);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.remove-btn i {
+  font-size: 2rem;
+}
+
+.inventory-slot.selected {
+  background-image: url(../images/slot-green.png);
+}
+
+.inventory-slot img {
+  width: 70%;
+  height: 70%;
+}
+
+
+.sandbox {
+  width: 80%;
+  height: min-content;
+  
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: min-content;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.sandbox-btn {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  aspect-ratio: 1;
+  background-size: cover;
+  background-color: transparent;
+}
+
+.noticer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  z-index: 100;
+}
+
+.noticer img {
+  width: 100px;
+}
+
+@media screen and (orientation:portrait) {
+    
+  body, html {
+    overflow: hidden;
+  }
+  .noticer {
+    display: flex;
+  }
+}
